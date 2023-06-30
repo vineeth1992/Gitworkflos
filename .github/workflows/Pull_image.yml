@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - "*"
-
-
 jobs:
  Test_image_pull:
     name: Test_image_pull
@@ -19,3 +17,5 @@ jobs:
 
       - name: checkout repository
         uses: actions/checkout@v3
+        
+      - run: echo "hello world"
