@@ -8,9 +8,14 @@ on:
 jobs:
  Test_image_pull:
     name: Test_image_pull
-    runs-on: atc-ubuntu-latest
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/vineeth1992/publish_to_gcr:main
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
+        
+      steps:
+
+      - name: checkout repository
+        uses: actions/checkout@v3
