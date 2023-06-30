@@ -1,0 +1,16 @@
+name: Test_image_Pull
+on:
+  push:
+    branches:
+      - "*"
+
+
+jobs:
+ Test_image_pull:
+    name: Test_image_pull
+    runs-on: atc-ubuntu-latest
+    container:
+      image: ghcr.io/vineeth1992/publish_to_gcr:main
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
